@@ -6,13 +6,12 @@ A Java application that processes text from a file or string and analyzes the co
 
 This project was developed for a Data Structures and Java course.
 
-The program loads text from either a file or a string, separates the text into individual words, and stores the results using different abstract data types. It tracks all words, unique words, and misspelled words while also providing basic document statistics. :contentReference[oaicite:0]{index=0}
+The program loads text from either a file or a string, separates the text into individual words, and stores the results using different abstract data types. It tracks all words, unique words, and misspelled words while also providing document statistics. :contentReference[oaicite:0]{index=0}
 
 ## Features
 
-- Loads text from a file
-- Loads and processes text from a string
-- Stores all document words in a list
+- Loads text from a file or string
+- Stores all processed words in a list
 - Tracks unique words using a set
 - Tracks misspelled words using a bag
 - Counts total words
@@ -36,12 +35,12 @@ The program loads text from either a file or a string, separates the text into i
 
 The program reads text and separates it into tokens using punctuation and whitespace as delimiters. Words are converted to lowercase, and words shorter than three characters are ignored. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
 
-The program then uses different data structures to organize the document:
+Different data structures are used for different parts of the document:
 
-- A **List** stores all processed words.
-- A **Set** stores unique words.
-- A **Bag** stores misspelled words.
-- A second **Set** is used as the dictionary of valid words. :contentReference[oaicite:6]{index=6}
+- A **List** stores all processed words
+- A **Set** stores unique words
+- A **Bag** stores misspelled words
+- A second **Set** represents the dictionary of valid words :contentReference[oaicite:6]{index=6}
 
 ## Testing
 
@@ -51,17 +50,27 @@ JUnit tests are included to verify functionality such as:
 - Counting unique words
 - Loading text from a string
 - Loading text from a file
-- Calling document-statistics methods :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
+- Calling document statistics methods :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
 
-## What I Learned
+## Sample Files
 
-This project strengthened my understanding of Java data structures and how different abstract data types can be used for different purposes. I also gained experience with file handling, string processing, object-oriented programming, and unit testing.
+The repository includes text files used to test and demonstrate the document processor.
+
+- `shortdoc.txt` — Small test document used by the JUnit file-loading test
+- `paragraph.txt` — Sample paragraph containing intentionally misspelled words for testing document and spelling analysis
+- `kennedy.txt` — Larger sample document used for testing text processing with a longer input
+- `dictionary.txt` — Word list used to support dictionary and spelling-related functionality
+
+The paragraph sample intentionally includes misspellings such as `compleatly`, `recipies`, and `embarassing`, making it useful for testing spelling-related behavior. :contentReference[oaicite:9]{index=9}
 
 ## Project Files
 
-- `Project2.java` — Main document-processing implementation
-- `Project2Test.java` — JUnit tests for the project
-
-## Course Dependencies
-
-This project uses course-provided classes and interfaces from the `itsc2214` package, including data structure interfaces and the `Document` class. Those dependencies may not be included in this repository. :contentReference[oaicite:9]{index=9}
+```text
+Java-Document-Processor/
+├── README.md
+├── Project2.java
+├── Project2Test.java
+├── shortdoc.txt
+├── paragraph.txt
+├── kennedy.txt
+└── dictionary.txt
